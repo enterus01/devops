@@ -1,4 +1,4 @@
-# Default values for lms.
+# Default values for fe.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -8,7 +8,7 @@ image:
   repository: tailieugiay/lms-war
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "fe-f22bd147969c1521708b7dbe61ade77752b8076e"
+  tag: "wiremock-f22bd147969c1521708b7dbe61ade77752b8076e"
 
 imagePullSecrets: docker-registry
 nameOverride: ""
@@ -42,11 +42,11 @@ service:
 
 ingress:
   enabled: true
-  className: "nginx"
-  annotations:
-    # kubernetes.io/ingress.class: "nginx"
+  className: ""
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
-  hosts:
+  hosts: 
     - host: lms-uat1.cloud-air.com
       paths:
         - path: /
