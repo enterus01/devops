@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: "{{ include "lms-be.fullname" . }}-test-connection"
+  name: "{{ include "be.fullname" . }}-test-connection"
   labels:
-    {{- include "lms-be.labels" . | nindent 4 }}
+    {{- include "be.labels" . | nindent 4 }}
   annotations:
     "helm.sh/hook": test
 spec:
@@ -11,5 +11,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "lms-be.fullname" . }}:{{ .Values.service.port }}']
+      args: ['{{ include "be.fullname" . }}:{{ .Values.service.port }}']
   restartPolicy: Never
