@@ -1,4 +1,4 @@
-# Default values for lms-be.
+# Default values for lms.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -8,9 +8,10 @@ image:
   repository: tailieugiay/lms-war
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "war-27e708d83bc3d07aaa9b7f2aca6f9703c85b137a"
+  tag: "war-uat-2567e6641f3fc279e12ea6ecd6b0916eac5fffe1"
 
 imagePullSecrets: docker-registry
+nameOverride: ""
 fullnameOverride: "be"
 
 serviceAccount:
@@ -41,31 +42,31 @@ service:
 
 ingress:
   enabled: false
-  className: ""
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
+  className: "nginx"
+  annotations:
+    # kubernetes.io/ingress.class: "nginx"
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: chart-example.local
+    - host: lms-uat1.cloud-air.com
       paths:
         - path: /
-          pathType: ImplementationSpecific
+          pathType: Prefix
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
 
-resources: {}
+resources:
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-  # limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
+  limits:
+    cpu: 1000m
+    memory: 1024Mi
+  requests:
+    cpu: 500m
+    memory: 512Mi
 
 autoscaling:
   enabled: false
