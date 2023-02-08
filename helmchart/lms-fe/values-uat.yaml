@@ -8,7 +8,8 @@ image:
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "fe-uat-4e730310bde49f16cdba4f962c578615054e8912"
-imagePullSecrets: []
+imagePullSecrets:
+  - name: regcred
 nameOverride: ""
 fullnameOverride: "fe"
 serviceAccount:
