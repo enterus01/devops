@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: nginx
+  repository: tailieugiay/lms-war
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "war-uat-c475379921eac399a82854e13e95dcf8dc683cd2"
 
 imagePullSecrets: docker-registry
 nameOverride: ""
