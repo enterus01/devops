@@ -7,7 +7,7 @@ image:
   repository: tailieugiay/lms-war
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "be-uat-e2e3cb3358ec16a23695c8f646d534bb6d8f0a14"
+  tag: "be-uat-7ce6f335342535b7e2fcaa75112774b04201923f"
 imagePullSecrets:
   - name: regcred
 nameOverride: ""
