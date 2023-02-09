@@ -42,8 +42,8 @@ spec:
               path: /api
               port: http
             initialDelaySeconds: 5
-            periodSeconds: 10
-            timeoutSeconds: 3
+            periodSeconds: 20
+            timeoutSeconds: 5
             failureThreshold: 10
           readinessProbe:
             httpGet:
