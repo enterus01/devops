@@ -39,7 +39,7 @@ spec:
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /api
+              path: /v2/api-docs
               port: http
             initialDelaySeconds: 5
             periodSeconds: 20
