@@ -7,7 +7,7 @@ image:
   repository: tailieugiay/lms-war
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "wiremock-uat-2749639a0219d01dfce4166a3c15727039850c71"
+  tag: "wiremock-uat-e1ee63bd76d3e700227b4fcf41127a2f1c65ed22"
 imagePullSecrets:
   - name: regcred
 nameOverride: ""
