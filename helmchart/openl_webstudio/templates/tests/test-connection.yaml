@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "openl_webstudio.fullname" . }}-test-connection"
+  labels:
+    {{- include "openl_webstudio.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "openl_webstudio.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
