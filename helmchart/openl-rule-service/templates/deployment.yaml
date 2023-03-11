@@ -46,7 +46,7 @@ spec:
         - name: data
           nfs:
             server: "nfs-service.storage.svc.cluster.local"
-            path: "/" # "nfs-direct" folder must exist inside "/exports" directory of NFS server
+            path: "/webstudio/local-repository" # "nfs-direct" folder must exist inside "/exports" directory of NFS server
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
