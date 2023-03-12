@@ -35,7 +35,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: {{ .Values.service.port }}
               protocol: TCP
           volumeMounts:
             - name: data
@@ -53,7 +53,7 @@ spec:
         - name: data
           nfs:
             server: "nfs-service.storage.svc.cluster.local"
-            path: "/webstudio/local-repository" # "nfs-direct" folder must exist inside "/exports" directory of NFS server
+            path: "/webstudio/local-repository"
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
