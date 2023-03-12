@@ -8,6 +8,7 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
+      nodePort: 39091
       targetPort: http
       protocol: TCP
       name: http
