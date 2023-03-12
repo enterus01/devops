@@ -42,6 +42,13 @@ spec:
               mountPath: /root/.openl/local-repository
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          env:
+            - name: "ruleservice.logging.enabled"
+              value: "true"
+            - name: "production-repository.factory"
+              value: "repo-file"
+            - name: "production-repository.uri"
+              value: "/root/.openl/local-repository"
       volumes:
         - name: data
           nfs:
