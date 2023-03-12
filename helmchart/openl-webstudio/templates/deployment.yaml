@@ -42,12 +42,12 @@ spec:
               mountPath: /root/.openl
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-      {{- with .Values.nodeSelector }}
       volumes:
         - name: data-webstudio
           nfs:
             server: "nfs-service.storage.svc.cluster.local"
             path: "/webstudio"
+      {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
