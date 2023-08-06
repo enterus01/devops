@@ -290,5 +290,6 @@ namespaceOverride: ""
 annotations: {}
 
 serviceAccount:
+  create: true
   # Annotations to add to the service account
   annotations: {}
