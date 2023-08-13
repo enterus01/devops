@@ -1,13 +1,13 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: DeamonSet
 metadata:
   name: {{ include "openl-rule-service.fullname" . }}
   labels:
     {{- include "openl-rule-service.labels" . | nindent 4 }}
 spec:
-  {{- if not .Values.autoscaling.enabled }}
-  replicas: {{ .Values.replicaCount }}
-  {{- end }}
+  # {{- if not .Values.autoscaling.enabled }}
+  # replicas: {{ .Values.replicaCount }}
+  # {{- end }}
   selector:
     matchLabels:
       {{- include "openl-rule-service.selectorLabels" . | nindent 6 }}
