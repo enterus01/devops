@@ -39,7 +39,7 @@ spec:
               protocol: TCP
           volumeMounts:
             - name: data
-              mountPath: /root/.openl/
+              mountPath: /root/.openl/local-repository
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
