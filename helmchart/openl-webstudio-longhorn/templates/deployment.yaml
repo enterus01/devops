@@ -1,13 +1,10 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: DaemonSet
 metadata:
   name: {{ include "openl-webstudio.fullname" . }}
   labels:
     {{- include "openl-webstudio.labels" . | nindent 4 }}
 spec:
-  {{- if not .Values.autoscaling.enabled }}
-  replicas: {{ .Values.replicaCount }}
-  {{- end }}
   selector:
     matchLabels:
       {{- include "openl-webstudio.selectorLabels" . | nindent 6 }}
