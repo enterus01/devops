@@ -12,7 +12,7 @@ image:
 
 imagePullSecrets: []
 nameOverride: "openl-rule-service"
-fullnameOverride: "openl-rule-service"
+fullnameOverride: ""
 
 serviceAccount:
   # Specifies whether a service account should be created
