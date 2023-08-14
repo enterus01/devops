@@ -38,6 +38,8 @@ spec:
           livenessProbe:
             tcpSocket:
               port: 8080
+            initialDelaySeconds: 15
+            periodSeconds: 20
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
