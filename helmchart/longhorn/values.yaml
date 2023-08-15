@@ -120,7 +120,7 @@ defaultSettings:
   replicaSoftAntiAffinity: true
   replicaAutoBalance: ~
   storageOverProvisioningPercentage: ~
-  storageMinimalAvailablePercentage: 15
+  storageMinimalAvailablePercentage: 10
   upgradeChecker: false
   defaultReplicaCount: 2
   defaultLonghornStaticStorageClass: ~
