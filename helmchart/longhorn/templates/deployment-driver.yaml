@@ -5,6 +5,7 @@ metadata:
   namespace: {{ include "release_namespace" . }}
   labels: {{- include "longhorn.labels" . | nindent 4 }}
 spec:
+  terminationGracePeriodSeconds: 60
   replicas: 1
   selector:
     matchLabels:
