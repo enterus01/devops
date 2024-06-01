@@ -5,7 +5,6 @@ metadata:
   labels:
     {{- include "lms-fe.labels" . | nindent 4 }}
 spec:
-  terminationGracePeriodSeconds: 60
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}

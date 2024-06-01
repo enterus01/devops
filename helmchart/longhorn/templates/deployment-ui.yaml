@@ -6,7 +6,6 @@ metadata:
   name: longhorn-ui
   namespace: {{ include "release_namespace" . }}
 spec:
-  terminationGracePeriodSeconds: 60
   replicas: {{ .Values.longhornUI.replicas }}
   selector:
     matchLabels:
