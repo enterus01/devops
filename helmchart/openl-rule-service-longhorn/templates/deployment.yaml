@@ -60,6 +60,15 @@ spec:
         - name: longhorn-pvc-retain
           persistentVolumeClaim:
             claimName: longhorn-pvc-retain
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: node-role.kubernetes.io/master
+                    operator: NotIn
+                    values:
+                      - "true"
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
